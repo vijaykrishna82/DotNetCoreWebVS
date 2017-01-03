@@ -10,7 +10,7 @@ namespace NetCoreVSWeb
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .UseIISIntegration()
+                //.UseIISIntegration()
                 .UseUrls("http://localhost:8081")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>();
