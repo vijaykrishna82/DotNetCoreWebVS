@@ -10,7 +10,18 @@ namespace NetCoreVSWeb.Controllers
     {
         public ViewResult Index()
         {
-            return View();
+            var scottIndex = new ScottIndex()
+            {
+                Name = "Scott",
+                Age = 20
+            };
+            return View(scottIndex);
         }
+    }
+
+    public class ScottIndex
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
     }
 }
