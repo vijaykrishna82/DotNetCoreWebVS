@@ -44,7 +44,8 @@ namespace NetCoreVSWeb
             app.Run(async (context) =>
             {
                 await context.Response
-                .WriteAsync($"Hello Vijay! {env.EnvironmentName} {Configuration["message"]}");
+                .WriteAsync($"Hello Vijay! {env.EnvironmentName} {Configuration["message"]}" +
+                $" { SampleLibrary.Class1.Greeting()}");
             });
 
 

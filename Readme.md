@@ -62,6 +62,15 @@ This project was created in Visual Studio-> add -> New Project-> .NET core -> Em
 
 
 
+### Updating Packages
+
+-  Go to SampleLibrary folder and run
+
+`dotnet pack`
+
+- Copy the generated files from bin folder to packages folder
+- One time:  Add the packages folder to nuget sources settings.
+- Update nuget packages
 
 
 
