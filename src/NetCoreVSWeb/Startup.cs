@@ -26,10 +26,11 @@ namespace NetCoreVSWeb
         {
             loggerFactory.AddConsole();
             //app.UseDirectoryBrowser();
-            app.UseFileServer();
+            //app.UseFileServer();
+            app.UseStaticFiles();
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello Vijay!" + (env.IsDevelopment() ? "Dev" : "Prod"));
+                await context.Response.WriteAsync($"Hello Vijay! {env.EnvironmentName}");
             });
 
 
