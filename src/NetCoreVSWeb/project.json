@@ -4,19 +4,20 @@
       "version": "1.0.3",
       "type": "platform"
     },
-  //  "Microsoft.AspNetCore.Server.IISIntegration": "1.0.3",
+  //"Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
     "Microsoft.AspNetCore.StaticFiles": "1.1.0",
     "Microsoft.Extensions.Logging.Console": "1.1.0",
     "Microsoft.Extensions.Configuration.Json": "1.1.0",
     "SampleLibrary": "1.0.0",
-    "Microsoft.AspNetCore.Routing": "1.1.0"
+    "Microsoft.AspNetCore.Routing": "1.1.0",
+    "Microsoft.AspNetCore.Mvc": "1.1.0"
   },
 
   //"tools": {
   //  "Microsoft.AspNetCore.Server.IISIntegration.Tools": {
-  //    "version": "1.0.3",
-  //    "imports": "portable-net45+win8+dnxcore50"
+  //    "version": "1.0.0",
+  //    "imports": "portable-net45+win8+dnxcore50+.netstandard1.6"
   //  }
   //},
 
@@ -25,7 +26,8 @@
       "imports": [
         "dotnet5.6",
         "dnxcore50",
-        "portable-net45+win8"
+        "portable-net45+win8",
+        ".NETStandard1.6"
       ]
     }
   },
