@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Routing;
 
 namespace NetCoreVSWeb
 {
@@ -32,6 +33,7 @@ namespace NetCoreVSWeb
         {
             services.AddLogging();
             services.AddDirectoryBrowser();
+            services.AddRouting();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +43,19 @@ namespace NetCoreVSWeb
             //app.UseDirectoryBrowser();
             //app.UseFileServer();
             app.UseStaticFiles();
+
+
+            var routeBuilder = new RouteBuilder(app);
+            routeBuilder.MapGet("route", x => x.Response.WriteAsync("Hello from Routing"));
+            routeBuilder.MapGet("route2", x => x.Response.WriteAsync("Hello from Routing2"));
+            routeBuilder.MapGet("route/3", x => x.Response.WriteAsync("Hello from Routing/3"));
+            routeBuilder.MapGet("post/{postNumber:int}", x => x.Response.WriteAsync($"Hello from post/{x.GetRouteValue("postNumber")}"));
+            routeBuilder.MapGet("post/{postNumber}", x => x.Response.WriteAsync($"Hello from post string/{x.GetRouteValue("postNumber")}"));
+
+            var router = routeBuilder.Build();
+
+            app.UseRouter(router);
+
             app.Run(async (context) =>
             {
                 await context.Response

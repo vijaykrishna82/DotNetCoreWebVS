@@ -73,6 +73,15 @@ This project was created in Visual Studio-> add -> New Project-> .NET core -> Em
 - Update nuget packages
 
 
+### Routing
+
+The following URLs are being handled by the routing middleware
+
+- http://localhost:8081/route
+- http://localhost:8081/route2
+- http://localhost:8081/route/3
+- http://localhost:8081/post/9999
+- http://localhost:8081/post/dsfdsf
 
 
 
