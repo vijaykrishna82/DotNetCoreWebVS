@@ -27,6 +27,20 @@ This project was created in Visual Studio-> add -> New Project-> .NET core -> Em
       }
 `
 
+#### Configuration Key Value Pair
+
+- In appsettings.json, we can add key value pairs as needed
+- In Startup.cs, we hookup the Configuration Provider in the constructor
+
+`Configuration = new ConfigurationBuilder()`
+`.SetBasePath(env.ContentRootPath)`
+`.AddJsonFile("appsettings.json")`
+`.Build();`
+
+- Note that we also needed the following in project.json"
+`    "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final"  `
+
+
 
 
 ### Sample Functionality
